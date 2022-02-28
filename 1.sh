@@ -1,8 +1,5 @@
 #!/bin/bash
-#filename find.sh
 echo "Разработик: Мануилова Д.Е.,12 вариант,ТУСУР,748"
-
-
 echo "Программа поиска  файлов по имени или по размеру больше назначенного"
 echo "С помощью данной программы осуществляется поиск файлов по имени или по размеру файла"
 while :
@@ -36,15 +33,13 @@ do
 	read -p "Введите путь к каталогу поиска: " dirname
 	find $dirname $par
 	while : ; do
-        read -p "продолжим поиск? [y/n] " flag2
+        read -p "Продолжим поиск? [y/n] " flag2
         if [[ "$flag2" == "y" || "$flag2" == "Y" ]]; then
             break;
         elif [[ "$flag2" == "n" || "$flag2" == "N" ]]; then
             exit "$?"
-        elif [[ -z "$flag2" ]]; then
-            exit "$?"
         else
-            1>&2 echo "Invalid value, must be y or n"
+            1>&2 echo "Необходимо ввести для продолжения:y, а для выхода: n"
         fi
     done
 done
